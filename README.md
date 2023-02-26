@@ -15,3 +15,7 @@ conda activate gargammel
 cd data/
 sh download_reference_genome.sh
 cd ..
+
+samtools faidx data/GCF_000005845.2_ASM584v2_genomic.fna
+
+fragSim -n 100000 -l 100 data/GCF_000005845.2_ASM584v2_genomic.fna  > data/modern.fasta   #creating DNA fragments of e.coli to be simulated by deamSim
