@@ -10,3 +10,8 @@ conda activate gargammel
 conda install -c bioconda gargammel
 
 conda install r-inline r-gam r-Rcpp r-RcppGLS r-RcppGSL r-ggplot2
+
+conda activate gargammel
+cd data/
+sh download_reference_genome.sh
+cd ..
