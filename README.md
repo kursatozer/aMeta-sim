@@ -8,3 +8,5 @@ conda env
 conda create --name gargammel
 conda activate gargammel
 conda install -c bioconda gargammel
+
+conda install r-inline r-gam r-Rcpp r-RcppGLS r-RcppGSL r-ggplot2
