@@ -32,10 +32,20 @@ seq-gen, you can install on Ubuntu by typing: `conda install -c "bioconda/label/
 ### Overview
 The main driver script, gargammel.pl calls the following programs in order to simulate the in vivo process by which ancient DNA fragments are retrieved:
 
-fragSim: simulation of ancient DNA fragments being retrieved at random from the genome
-deamSim: simulation of damage to the fragments selected by fragSim
-adptSim: adding of adapters to create raw Illumina reads (without errors and quality scores)
-Finally, the simulated raw Illumina reads are sent to ART to add sequencing errors and corresponding quality scores.
+    -fragSim: simulation of ancient DNA fragments being retrieved at random from the genome
+    -deamSim: simulation of damage to the fragments selected by fragSim
+    -adptSim: adding of adapters to create raw Illumina reads (without errors and quality scores)
+    -Finally, the simulated raw Illumina reads are sent to ART to add sequencing errors and corresponding quality scores.
+
+Input description:
+
+The basic input is a directory with 3 subfolders named:
+
+    *endo/
+    *cont/
+    *bact/
+
+Which represent the endogenous ancient human, the present-day human contaminant and the microbial contamination respectively. Each file inside represents a genome (not simply a chromosome or scaffold). The endogenous ancient human can only contain more than 2 genomes since it is a diploid individual. For the microbial contamination, please add a representative set of microbes for your sample (see the section about the examples of microbial databases).
 
 ```
 python ../ms2chromosomes.py  -s 0.2 -f . -n 1000
