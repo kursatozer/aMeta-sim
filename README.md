@@ -1,9 +1,7 @@
 # aMeta-sim
 In this study, it is aimed to make analyzes using ancient metagenome simulations.
 
-```
-export PATH=/home/kursat/anaconda3/bin:$PATH
-```
+
 
 ```
 conda env
@@ -13,7 +11,13 @@ conda install -c bioconda gargammel
 ```
 
 ```
-conda install r-inline r-gam r-Rcpp r-RcppGLS r-RcppGSL r-ggplot2
+conda install -c "conda-forge/label/gcc7" r-inline
+conda install -c "conda-forge/label/gcc7" r-gam
+conda install -c "conda-forge/label/gcc7" r-rcpp
+conda install -c "conda-forge/label/cf202003" r-rcppgsl
+conda install -c "conda-forge/label/gcc7" r-ggplot2
+conda install -c "bioconda/label/cf201901" bwa
+conda install -c "bioconda/label/cf201901" mapdamage2
 ```
 
 ```
