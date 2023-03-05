@@ -1,8 +1,9 @@
 # aMeta-sim
 In this study, it is aimed to make analyzes using ancient metagenome simulations.
 
-## gargammel
+## Gargammel
 
+### Preparing the Environment
 ```
 conda env
 conda create --name gargammel
@@ -73,7 +74,7 @@ Then we will create the aDNA fragments:
 gargammel -c 3  --comp 0,0.08,0.92 -f src/sizefreq.size.gz  -matfile src/matrices/single-  -o data/simulation data/
 ```
 
-This will simulate a dataset with 8% human contamination. The rate of misincorporation due to deamination that will be used will follow a single-strand deamination using the empirical rates measured from the Loschbour individual from:
+This will simulate a dataset with 8% human contamination. The rate of misincorporation due to deamination that will be used will follow a single-strand deamination using the empirical rates measured from the Loschbour individual from.
 
 
 
