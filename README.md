@@ -9,16 +9,33 @@ conda create --name gargammel
 conda activate gargammel
 conda install -c bioconda gargammel
 ```
-
+### Downloading:
+Do a :
 ```
 git clone https://github.com/grenaud/gargammel.git
 ```
+
+### Requirements:
 ```
+conda install -c anaconda cmake
 conda install -c anaconda scipy
 conda install -c "conda-forge/label/gcc7" biopython
 conda install -c "bioconda/label/cf201901" ms
+conda install -c "conda-forge/label/gcc7" gsl
 
 ```
+If you plan on using ms2chromosomes.py to simulate chromosomes based on ms, you also need:
+
+Hudson's ms (see: http://home.uchicago.edu/rhudson1/source/mksamples.html)
+seq-gen, you can install on Ubuntu by typing: `conda install -c "bioconda/label/cf201901" seq-gen`
+
+### Overview
+The main driver script, gargammel.pl calls the following programs in order to simulate the in vivo process by which ancient DNA fragments are retrieved:
+
+fragSim: simulation of ancient DNA fragments being retrieved at random from the genome
+deamSim: simulation of damage to the fragments selected by fragSim
+adptSim: adding of adapters to create raw Illumina reads (without errors and quality scores)
+Finally, the simulated raw Illumina reads are sent to ART to add sequencing errors and corresponding quality scores.
 
 ```
 python ../ms2chromosomes.py  -s 0.2 -f . -n 1000
