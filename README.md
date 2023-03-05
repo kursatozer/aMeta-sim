@@ -1,8 +1,40 @@
 # aMeta-sim
 In this study, it is aimed to make analyzes using ancient metagenome simulations.
 
+## gargammel
+
+```
+conda env
+conda create --name gargammel
+conda activate gargammel
+conda install -c bioconda gargammel
+```
+
+```
+git clone https://github.com/grenaud/gargammel.git
+```
+```
+conda install -c anaconda scipy
+conda install -c "conda-forge/label/gcc7" biopython
+conda install -c "bioconda/label/cf201901" ms
+
+```
+
+```
+python ../ms2chromosomes.py  -s 0.2 -f . -n 1000
+rm -rfv simul_* seedms #cleanup
+```
+
+```
+gargammel -c 3  --comp 0,0.08,0.92 -f src/sizefreq.size.gz  -matfile src/matrices/single-  -o data/simulation data/
+```
 
 
+
+
+
+
+## internship-project
 ```
 conda env
 conda create --name gargammel
