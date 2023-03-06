@@ -71,6 +71,7 @@ The segsites files correspond to heterozygous sites between both endogenous geno
 Then we will create the aDNA fragments:
 
 ```
+cd ..
 gargammel -c 3  --comp 0,0.08,0.92 -f src/sizefreq.size.gz  -matfile src/matrices/single-  -o data/simulation data/
 ```
 
