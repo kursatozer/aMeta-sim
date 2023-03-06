@@ -1,33 +1,44 @@
 # aMeta-sim
+
 In this study, it is aimed to make analyzes using ancient metagenome simulations.
 
 ## Gargammel
 
 ### Preparing the Environment
-```
-conda env
-conda create --name gargammel
+
+We have two different ways to install Gargammel. First, we can just install the base gargammel, and then we can install to tools that gargammel need:
+
+```bash
+conda create --name gargammel -c bioconda gargammel
 conda activate gargammel
-conda install -c bioconda gargammel
 ```
-### Downloading:
+
 Do a :
-```
+
+```bash
 git clone https://github.com/grenaud/gargammel.git
 ```
 
-### Requirements:
-```
+Then install the dependencies
+
+```bash
 conda install -c anaconda cmake
 conda install -c anaconda scipy
 conda install -c "conda-forge/label/gcc7" biopython
 conda install -c "bioconda/label/cf201901" ms
 conda install -c "conda-forge/label/gcc7" gsl
-
 ```
+
+Second way, we can install all these tools using the predefined gargammel conda environment:
+
+```bash
+conda env create -f environment.yml
+```
+
 If you plan on using ms2chromosomes.py to simulate chromosomes based on ms, you also need:
 
 Hudson's ms (see: http://home.uchicago.edu/rhudson1/source/mksamples.html)
+
 seq-gen, you can install on Ubuntu by typing: `conda install -c "bioconda/label/cf201901" seq-gen`
 
 ### Overview
