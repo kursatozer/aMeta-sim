@@ -4,6 +4,8 @@ In this study, it is aimed to make analyzes using ancient metagenome simulations
 ## Gargammel
 
 ### Preparing the Environment
+Create the necessary environment to use the Gargamel tool smoothly
+
 ```
 conda env
 conda create --name gargammel
@@ -12,6 +14,8 @@ conda install -c bioconda gargammel
 ```
 
 ### Requirements:
+install necessary tools for simulation analysis
+
 ```
 conda install -c anaconda cmake
 conda install -c anaconda scipy
