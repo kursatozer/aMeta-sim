@@ -10,11 +10,6 @@ conda create --name gargammel
 conda activate gargammel
 conda install -c bioconda gargammel
 ```
-### Downloading:
-Do a :
-```
-git clone https://github.com/grenaud/gargammel.git
-```
 
 ### Requirements:
 ```
