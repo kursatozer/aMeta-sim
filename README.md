@@ -57,6 +57,10 @@ Which represent the endogenous ancient human, the present-day human contaminant 
 This is an example of usage to simulate a slightly contaminated (8%) dataset. First, we will simulate chromosomes using ms and seq-gen:
 ```
 mkdir data
+cd data
+mkdir endo
+mkdir cont
+mkdir bact
 ```
 Next, we will create 1000 simulations of 2 lineages that are allowed to coalesce after 0.2 units of coalescence. The first one will represent our endogenous ancient human while the other, the present-day human contaminant. It will also generate an additional chromosome from the same population as the contaminant to be used as reference for alignment. We generate sequences for those using the following script:
 
@@ -83,6 +87,8 @@ In this section, we will use small pathogen reference genomes to test the progra
 
 ```
 cd data/endo/
-sh ../download_reference_genome.sh
-mv GCF_000005845.2_ASM584v2_genomic.fna ../data/cont/
+sh ../../download_reference_genome.sh
+mv GCF_000005845.2_ASM584v2_genomic.fna ../cont/
+mv GCF_000006765.1_ASM676v1_genomic.fna ../bact/
+
 ```
