@@ -53,8 +53,8 @@ The basic input is a directory with 3 subfolders named:
 Which represent the endogenous ancient human, the present-day human contaminant and the microbial contamination respectively. Each file inside represents a genome (not simply a chromosome or scaffold). The endogenous ancient human can only contain more than 2 genomes since it is a diploid individual. For the microbial contamination, please add a representative set of microbes for your sample (see the section about the examples of microbial databases).
 
 ### Example of usage:
+create the necessary files to run the simulation
 
-This is an example of usage to simulate a slightly contaminated (8%) dataset. First, we will simulate chromosomes using ms and seq-gen:
 ```
 mkdir data
 cd data
@@ -62,33 +62,33 @@ mkdir endo
 mkdir cont
 mkdir bact
 ```
-Next, we will create 1000 simulations of 2 lineages that are allowed to coalesce after 0.2 units of coalescence. The first one will represent our endogenous ancient human while the other, the present-day human contaminant. It will also generate an additional chromosome from the same population as the contaminant to be used as reference for alignment. We generate sequences for those using the following script:
+
+In this section, we will use small pathogen reference genomes to test the program. Let's consider one genome as endogenous reference genome, one as contamination reference genome, and one genome as bacterial reference genome, and export one genome to cont and one to bact file.
+```
+cd data/endo/
+sh ../../download_reference_genome.sh
+mv GCF_000005845.2_ASM584v2_genomic.fna ../cont/
+mv GCF_000006765.1_ASM676v1_genomic.fna ../bact/
+cd ../../
+```
+
+or
 
 ```
 cd data/
-python ../ms2chromosomes.py  -s 0.2 -f . -n 1000
+python ../ms2chromosomes.py  -s 0.2 -f . -n 1000 
 rm -rfv simul_* seedms #cleanup
-```
-The segsites files correspond to heterozygous sites between both endogenous genomes.
-
-Then we will create the aDNA fragments:
 
 ```
-cd ..
+
+In this method, 1000 simulations of 2 strains allowed to merge after 0.2 units of merging are created. The first will represent our inner ancient human, and the other the present-day human pollutant. It will also produce an additional chromosome from the same population as the contaminant to be used as a reference for alignment.
+
+and set your preferred parameters and run your simulation
+
+```
 
 gargammel -c 3  --comp 0,0.08,0.92 -f src/sizefreq.size.gz  -matfile src/matrices/single-  -o data/simulation data/
 ```
 
 This will simulate a dataset with 8% human contamination. The rate of misincorporation due to deamination that will be used will follow a single-strand deamination using the empirical rates measured from the Loschbour individual from.
  
-## Download reference genomes
-
-In this section, we will use small pathogen reference genomes to test the program. Let's consider three of the genomes as the endogenous reference genome and one as the contamination reference genome and export one of the genomes to the cont file.
-
-```
-cd data/endo/
-sh ../../download_reference_genome.sh
-mv GCF_000005845.2_ASM584v2_genomic.fna ../cont/
-mv GCF_000006765.1_ASM676v1_genomic.fna ../bact/
-
-```
