@@ -92,3 +92,12 @@ gargammel -c 3  --comp 0,0.08,0.92 -f src/sizefreq.size.gz  -matfile src/matrice
 
 This will simulate a dataset with 8% human contamination. The rate of misincorporation due to deamination that will be used will follow a single-strand deamination using the empirical rates measured from the Loschbour individual from.
  
+ ### Bacterial databases
+
+ For the input/bact/ directory which represent the microbial contamination, gargammel needs a set of fasta files that represent the different microbes. Each file corresponds to exactly one microbial species. Each fasta file must contain the genome of the microbial species, multiple scaffolds and plasmids are allowed. Each fasta file must also be faidx indexed. This directory must also contain a file called "list". This file contains the list of every fasta files in that directory along with their relative abundance in the desired bacterial contamination. For example:
+ 
+ ```
+bacteria1.fa	0.5
+bacteria2.fa	0.3
+bacteria3.fa	0.2
+```
