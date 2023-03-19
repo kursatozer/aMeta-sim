@@ -65,10 +65,11 @@ mkdir bact
 
 In this section, we will use small pathogen reference genomes to test the program. Let's consider one genome as endogenous reference genome, one as contamination reference genome, and one genome as bacterial reference genome, and export one genome to cont and one to bact file.
 ```
-cd data/endo/
+cd data/bact/
 sh ../../download_reference_genome.sh
-mv GCF_000005845.2_ASM584v2_genomic.fna ../cont/
-mv GCF_000006765.1_ASM676v1_genomic.fna ../bact/
+mv GCF_000005845.2_ASM584v2_genomic.fna ../endo/
+mv GCF_900460135.1_41686_D01_genomic.fna ../endo/
+mv GCF_000010605.1_ASM1060v1_genomic.fna ../endo/
 cd ../../
 ```
 
