@@ -62,18 +62,7 @@ mkdir endo
 mkdir cont
 mkdir bact
 ```
-
-In this section, we will use small pathogen reference genomes to test the program. Let's consider one genome as endogenous reference genome, one as contamination reference genome, and one genome as bacterial reference genome, and export one genome to cont and one to bact file.
-```
-cd data/bact/
-sh ../../download_reference_genome.sh
-mv GCF_000005845.2_ASM584v2_genomic.fna ../cont/
-mv GCF_900460135.1_41686_D01_genomic.fna ../cont/
-mv GCF_000010605.1_ASM1060v1_genomic.fna ../cont/
-cd ../../
-```
-
-or
+In this method, 1000 simulations of 2 strains allowed to merge after 0.2 units of merging are created. The first will represent our inner ancient human, and the other the present-day human pollutant. It will also produce an additional chromosome from the same population as the contaminant to be used as a reference for alignment.
 
 ```
 cd data/
@@ -82,23 +71,74 @@ rm -rfv simul_* seedms #cleanup
 
 ```
 
-In this method, 1000 simulations of 2 strains allowed to merge after 0.2 units of merging are created. The first will represent our inner ancient human, and the other the present-day human pollutant. It will also produce an additional chromosome from the same population as the contaminant to be used as a reference for alignment.
-
-and set your preferred parameters and run your simulation
-
+In this section, we will use small pathogen reference genomes to test the program. Let's consider one genome as endogenous reference genome, one as contamination reference genome, and one genome as bacterial reference genome, and export one genome to cont and one to bact file.
 ```
-
-gargammel -c 3  --comp 0,0.08,0.92 -f src/sizefreq.size.gz  -matfile src/matrices/single-  -o data/simulation data/
+cd bact/
+sh ../../download_reference_genome.sh
+mv GCF_000005845.2_ASM584v2_genomic.fna ../cont/
+mv GCF_900460135.1_41686_D01_genomic.fna ../cont/
+mv GCF_000010605.1_ASM1060v1_genomic.fna ../cont/
+cd ../../
 ```
-
-This will simulate a dataset with 8% human contamination. The rate of misincorporation due to deamination that will be used will follow a single-strand deamination using the empirical rates measured from the Loschbour individual from.
- 
  ### Bacterial databases
 
- For the input/bact/ directory which represent the microbial contamination, gargammel needs a set of fasta files that represent the different microbes. Each file corresponds to exactly one microbial species. Each fasta file must contain the genome of the microbial species, multiple scaffolds and plasmids are allowed. Each fasta file must also be faidx indexed. This directory must also contain a file called "list". This file contains the list of every fasta files in that directory along with their relative abundance in the desired bacterial contamination. For example:
- 
- ```
-bacteria1.fa	0.5
-bacteria2.fa	0.3
-bacteria3.fa	0.2
+ Create a file named 'list' in the bact folder and specify the frequency of the bacteria; for example
+
 ```
+GCF_000144405.1_ASM14440v1_genomic.fna      0.4
+GCF_001457555.1_NCTC10562_genomic.fna       0.3
+GCF_022819245.1_ASM2281924v1_genomic.fna    0.3
+```
+### Options
+
+`-comp [B,C,E]` Composition of the final set in fraction 
+the 3 numbers represent the bacterial, contaminant and endogenous
+ex: `--comp 0.6,0.02,0.38` will result
+in 60% bacterial contamination while the rest will be from the same
+species 5% will be contamination and 95% will be endogenous
+Default: --comp 0,0,1
+and set your preferred parameters and run your simulation
+
+`-f`: a file to specify read length distribution
+`--mock`: Do nothing, just print the commands that will be run
+`-o`: Output prefix (default: [input dir]/simadna)
+ Either specify:
+`-n [number]`: Generate [number] fragments (default: 1000)
+`-c	[coverage]`: Endogenous coverage 
+
+ #### Fragment selection
+
+	Fragment size distribution: specify either one of the 3 possible options:
+`-l	[length]`: Generate fragments of fixed length  (default: 35)
+`-s	[file]`: Open file with size distribution (one fragment length per line)
+`-f	[file]`: Open file with size frequency in the following format:
+length[TAB]freq	ex:
+```
+40	0.0525
+41	0.0491
+ ```
+#### Length options:
+
+`--loc [file]`: Location for lognormal distribution (default none)
+`--scale [file]`: Scale for lognormal distribution    (default none)
+
+#### Fragment size limit:
+
+`--minsize [length]`: Minimum fragments length (default: 0)
+`--maxsize	[length]`: Maximum fragments length (default: 1000)
+
+#### Deamination
+
+`-damage` [v,l,d,s]: For the Briggs et al. 2007 model
+The parameters must be comma-separated e.g.: `-damage 0.03,0.4,0.01,0.3`
+
+`-damageb` [v,l,d,s]: Bacterial Briggs parameters
+
+```
+
+gargammel -n 210000  --comp 0.67,0.03,0.3 -f src/sizefreq.size.gz  -rl 125 --loc 3.6978229805 --scale 0.2699858954 -damageb 0.04,0.3,0.02,0.3 -o data/simulation data
+
+
+```
+To add deamination to the bacterial and endogenous material,you can specify
+ either one o```
