@@ -5,7 +5,7 @@ wget -nc https://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.t
 # get only necessary part
 cut -f 1,5,6,8,20 assembly_summary.txt | grep -wv na > only_bacteria.txt
 
-mkdir -p bacteria
+mkdir -p data/bact
 
 while read BACTERIA
 do 
@@ -17,6 +17,8 @@ do
 	LINK=$(grep "${BACTERIA}" only_bacteria.txt | cut -f5 | sed 's/https/ftp/g')
 
 	# download ftp
-	wget  ${LINK}/${ID}_genomic.fna.gz -O bacteria/${ID}_genomic.fna.gz
-
+	wget  ${LINK}/${ID}_genomic.fna.gz -O data/bact/${ID}_genomic.fna.gz
+	gunzip  data/bact/${ID}_genomic.fna.gz
 done < bacteria.list
+
+Rscript simulate-abundance.R bact
