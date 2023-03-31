@@ -20,3 +20,5 @@ do
 	wget  ${LINK}/${ID}_genomic.fna.gz -O data/cont/${ID}_genomic.fna.gz
 	gunzip  data/cont/${ID}_genomic.fna.gz
 done < cont.list
+
+Rscript simulate-abundance.R cont

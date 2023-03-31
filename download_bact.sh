@@ -20,3 +20,5 @@ do
 	wget  ${LINK}/${ID}_genomic.fna.gz -O data/bact/${ID}_genomic.fna.gz
 	gunzip  data/bact/${ID}_genomic.fna.gz
 done < bacteria.list
+
+Rscript simulate-abundance.R bact
