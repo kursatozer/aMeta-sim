@@ -72,11 +72,14 @@ rm -rfv simul_* seedms
 
 ```
 
-Later les't add three environmental bacterial contaminations next to the human contamination in the conta folder. Let's add bacteria from three oral flora to simulate ancient in the Bact folder.
+Next, let's download the environmental bacterial contamination in the `cont.list file` in addition to the human contamination in the contamination folder. Let's download bacteria from the oral flora in the `bacteria.list` file to be simulated as ancient in the `Bact` folder.
 
 ```
 cd bact/
-sh ../../download.sh
+sh ../../download_bact.sh
+cd ../
+cd cont/
+sh ../../download_cont.sh
 cd ../../
 ```
 
