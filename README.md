@@ -76,10 +76,7 @@ Later les't add three environmental bacterial contaminations next to the human c
 
 ```
 cd bact/
-sh ../../download_reference_genome.sh
-mv GCF_000005845.2_ASM584v2_genomic.fna ../cont/
-mv GCF_900460135.1_41686_D01_genomic.fna ../cont/
-mv GCF_000010605.1_ASM1060v1_genomic.fna ../cont/
+sh ../../download.sh
 cd ../../
 ```
 
