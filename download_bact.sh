@@ -5,7 +5,7 @@ wget -nc https://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.t
 # get only necessary part
 cut -f 1,5,6,8,20 assembly_summary.txt | grep -wv na > only_bacteria.txt
 
-mkdir -p data/bact
+cd -p data/bact
 
 while read BACTERIA
 do 

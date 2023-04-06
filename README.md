@@ -66,21 +66,17 @@ mkdir bact
 Firstly 1000 simulations of 2 strains allowed to merge after 0.2 units of merging are created. The first will represent our inner ancient human, and the other the present-day human pollutant. It will also produce an additional chromosome from the same population as the contaminant to be used as a reference for alignment.
 
 ```
-cd data/
+
 python ../ms2chromosomes.py  -s 0.2 -f . -n 1000 
 rm -rfv simul_* seedms
-
+cd ..
 ```
 
 Next, let's download the environmental bacterial contamination in the `cont.list file` in addition to the human contamination in the contamination folder. Let's download bacteria from the oral flora in the `bacteria.list` file to be simulated as ancient in the `Bact` folder.
 
 ```
-cd bact/
-sh ../../download_bact.sh
-cd ../
-cd cont/
-sh ../../download_cont.sh
-cd ../../
+sh download_bact.sh
+sh download_cont.sh
 ```
 
  ### Bacterial databases
