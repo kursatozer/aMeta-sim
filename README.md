@@ -160,8 +160,9 @@ Install necessary tools for analysis
 ```
 conda install -c "bioconda/label/cf201901" fastqc
 conda install -c "bioconda/label/cf201901" cutadapt
+conda install -c "bioconda/label/cf201901" flash
 ```
-### start Analysis of Ancient Metagenomic Simulation
+### Start Analysis of Ancient Metagenomic Simulation
 
 ```
 sh sim_analysis.sh 
