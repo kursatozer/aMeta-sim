@@ -144,6 +144,8 @@ After completing all the necessary preparations, specify the options and paramet
 gargammel -n 210000  --comp 0.67,0.03,0.3 -f src/sizefreq.size.gz  -rl 125 --loc 3.6978229805 --scale 0.2699858954 -damageb 0.04,0.3,0.02,0.3 -o data/simulation data
 ```
 ## Analysis
+
+### Preparing the Environment for Analysis
 Create and activate a new environment to avoid package version conflicts
 
 ```
