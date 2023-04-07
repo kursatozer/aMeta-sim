@@ -80,7 +80,7 @@ sh download_cont.sh
 ```
 
  ### Bacterial databases
-Create a file named 'list' in the bact folder and specify the frequency of the bacteria; for example
+Specify the frequency of bacteria to manually create a file named 'list' in the Bact folder; For example
 
 ```
 GCF_000144405.1_ASM14440v1_genomic.fna      0.4
