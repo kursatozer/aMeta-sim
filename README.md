@@ -153,3 +153,12 @@ conda env
 conda create --name analysis
 conda activate analysis
 ```
+
+### Requirements for Analysis
+Install necessary tools for analysis
+
+```
+conda install -c "bioconda/label/cf201901" fastqc
+conda install -c "bioconda/label/cf201901" cutadapt
+
+```
