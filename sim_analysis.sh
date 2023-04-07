@@ -19,7 +19,8 @@ cutadapt -q 28 -m 10 --trim-n -a AGATCGGAAGAG -A AGATCGGAAGAG -j 4 -o data/cutad
 fastqc data/cutadapt/simulation_s1_fastqc.gz data/cutadapt/simulation_s2_fastqc.gz
 
 # align bidirectional reading with flash for longer readings
-flash -m11 -M15 -z data/cutadapt/simulation_s1_fastqc.gz data/cutadapt/simulation_s2_fastqc.gz 2>&1 | tee flash.log
+cd data/cutadapt
+flash -m11 -M15 -z simulation_s1_fastqc.gz simulation_s2_fastqc.gz 2>&1 | tee flash.log
 
 
 
