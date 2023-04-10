@@ -165,5 +165,5 @@ conda install -c "bioconda/label/cf201901" flash
 ### Start Analysis of Ancient Metagenomic Simulation
 
 ```
-sh sim_analysis.sh 
+sim_analysis.sh 
 ```
