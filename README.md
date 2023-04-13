@@ -168,3 +168,9 @@ conda install -c "bioconda/label/cf201901" megahit
 ```
 sh sim_analysis.sh 
 ```
+
+### Assembly With Megahit
+
+```
+megahit -f -r results/merged-fastq/simulation.merged.fastq.gz -t 4 --k-list 21,31,51,61,71,81,91,101 -o results/sim.assembly
+```
