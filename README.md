@@ -161,6 +161,7 @@ Install necessary tools for analysis
 conda install -c "bioconda/label/cf201901" fastqc
 conda install -c "bioconda/label/cf201901" cutadapt
 conda install -c "bioconda/label/cf201901" flash
+conda install -c "bioconda/label/cf201901" megahit
 ```
 ### Start Analysis of Ancient Metagenomic Simulation
 
