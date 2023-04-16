@@ -162,6 +162,7 @@ conda install -c "bioconda/label/cf201901" fastqc
 conda install -c "bioconda/label/cf201901" cutadapt
 conda install -c "bioconda/label/cf201901" flash
 conda install -c "bioconda/label/cf201901" megahit
+conda install -c "bioconda/label/cf201901" kraken2
 ```
 ### Start Analysis of Ancient Metagenomic Simulation
 
