@@ -175,3 +175,7 @@ sh sim_analysis.sh
 ```
 megahit -f -r results/merged-fastq/simulation.merged.fastq.gz -t 4 --k-list 21,31,51,61,71,81,91,101 -o results/sim.assembly
 ```
+
+```
+
+```
