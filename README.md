@@ -176,6 +176,9 @@ sh sim_analysis.sh
 megahit -f -r results/merged-fastq/simulation.merged.fastq.gz -t 4 --k-list 21,31,51,61,71,81,91,101 -o results/sim.assembly
 ```
 
-```
+### Taxonomic Classification
 
+```
+sh download_database.sh 
+kraken2 --db results/k2_standard_08gb_20230314 results/sim.assembly/final.contigs.fa --output results/kraken_output.txt
 ```
