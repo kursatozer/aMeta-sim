@@ -182,5 +182,5 @@ Use the kraken2 tool for taxonomic classification. Kraken is a taxonomic sequenc
 
 ```
 sh download_database.sh 
-kraken2 --db results/k2_standard_08gb_20230314 results/sim.assembly/final.contigs.fa --output results/kraken_output.txt
+kraken2 --db results/k2_standard_08gb_20230314 results/sim.assembly/final.contigs.fa --report results/k2_report.txt --output results/kraken_output.txt
 ```
