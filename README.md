@@ -177,7 +177,6 @@ megahit -f -r results/merged-fastq/simulation.merged.fastq.gz -t 4 --k-list 21,3
 ```
 
 ### Taxonomic Classification
-
 Use the kraken2 tool for taxonomic classification. Kraken is a taxonomic sequence classifier that assigns taxonomic tags to DNA sequences.
 
 ```
