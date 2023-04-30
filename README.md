@@ -141,7 +141,7 @@ s: prob. of deamination of Cs in single-stranded parts
 After completing all the necessary preparations, specify the options and parameters suitable for your work after the `gargammel` command and run it.
 
 ```
-gargammel -n 210000  --comp 0.67,0.03,0.3 -f src/sizefreq.size.gz  -rl 125 --loc 3.6978229805 --scale 0.2699858954 -damageb 0.04,0.3,0.02,0.3 -o data/simulation data
+gargammel -n 210000  --comp 0.45,0.45,0.1 -f src/sizefreq.size.gz  -rl 125 --loc 3.6978229805 --scale 0.2699858954 -damageb 0.04,0.3,0.02,0.3 -o data/simulation data
 ```
 ## Analysis
 
