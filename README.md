@@ -58,9 +58,10 @@ mkdir cont
 mkdir bact
 cd ..
 ```
-Firstly Download the two homosapiens chromosome files into the endo folder. The first of the chromosomes will be simulated as ancient humans. The second will be simulated as modern human contamination.
-(you can use 1 and 2 chromosomes
-https://www.ncbi.nlm.nih.gov/nuccore/NC_000002.12
+### Downloading Data
+
+First, download two homosapiens chromosome files of the same chromosome to the endo folder. Or add the chromosome file you downloaded to the endo folder again with a different name. The first of the chromosomes will be simulated as ancient people. Second, it will be simulated as modern human pollution.
+(you can use 1 chromosomes
 https://www.ncbi.nlm.nih.gov/nuccore/NC_000001.11?report=gbwithparts&log$=seqview)
 
 Next, let's download the environmental bacterial contamination in the `cont.list file` in addition to the human contamination in the contamination folder. Let's download bacteria from the oral flora in the `bacteria.list` file to be simulated as ancient in the `Bact` folder.
