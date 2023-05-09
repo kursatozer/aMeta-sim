@@ -7,21 +7,16 @@ In this study, it is aimed to make analyzes using ancient metagenome simulations
 Create the necessary environment to use the Gargamel tool smoothly
 
 ```
-conda env
-conda create --name gargammel
-conda activate gargammel
-conda install -c bioconda gargammel
+conda create --name aMeta-sim
+conda activate aMeta-sim
 ```
 
 ### Requirements:
 install necessary tools for simulation analysis
 
 ```
-conda install -c anaconda cmake
-conda install -c anaconda scipy
-conda install -c "conda-forge/label/gcc7" biopython
-conda install -c "bioconda/label/cf201901" ms
-conda install -c "conda-forge/label/gcc7" gsl
+conda install -c bioconda gargammel
+conda install -c "conda-forge/label/gcc7" r-base
 
 ```
 If you plan on using ms2chromosomes.py to simulate chromosomes based on ms, you also need:
@@ -61,6 +56,7 @@ cd data
 mkdir endo
 mkdir cont
 mkdir bact
+cd ..
 ```
 
 Firstly 1000 simulations of 2 strains allowed to merge after 0.2 units of merging are created. The first will represent our inner ancient human, and the other the present-day human pollutant. It will also produce an additional chromosome from the same population as the contaminant to be used as a reference for alignment.
@@ -141,7 +137,7 @@ s: prob. of deamination of Cs in single-stranded parts
 After completing all the necessary preparations, specify the options and parameters suitable for your work after the `gargammel` command and run it.
 
 ```
-gargammel -n 210000  --comp 0.45,0.45,0.1 -f src/sizefreq.size.gz  -rl 125 --loc 3.6978229805 --scale 0.2699858954 -damageb 0.04,0.3,0.02,0.3 -o data/simulation data
+gargammel -n 250000 --comp 0.45,0.45,0.1 -f src/sizefreq.size.gz  -rl 125 --loc 3.7424069808 --scale 0.2795148843 -damage  0.03,0.4,0.01,0.3 -o data/simulation data
 ```
 ## Analysis
 
@@ -173,7 +169,7 @@ sh sim_analysis.sh
 ### Assembly With Megahit
 
 ```
-megahit -f -r results/merged-fastq/simulation.merged.fastq.gz -t 4 --k-list 21,31,51,61,71,81,91,101 -o results/sim.assembly
+megahit -f -r results/merged-fastq/simulation.merged.fastq.gz -t 4 --k-list 21,31,41,51,61,71,81,91,101 -o results/sim.assembly
 ```
 
 ### Taxonomic Classification
