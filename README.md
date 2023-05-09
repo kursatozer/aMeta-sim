@@ -136,15 +136,6 @@ gargammel -n 250000 --comp 0.45,0.45,0.1 -f src/sizefreq.size.gz  -rl 125 --loc 
 ```
 ## Analysis
 
-### Preparing the Environment for Analysis
-Create and activate a new environment to avoid package version conflicts
-
-```
-conda env
-conda create --name analysis
-conda activate analysis
-```
-
 ### Requirements for Analysis
 Install necessary tools for analysis
 
