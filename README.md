@@ -58,15 +58,10 @@ mkdir cont
 mkdir bact
 cd ..
 ```
-
-Firstly 1000 simulations of 2 strains allowed to merge after 0.2 units of merging are created. The first will represent our inner ancient human, and the other the present-day human pollutant. It will also produce an additional chromosome from the same population as the contaminant to be used as a reference for alignment.
-
-```
-
-python ../ms2chromosomes.py  -s 0.2 -f . -n 1000 
-rm -rfv simul_* seedms
-cd ..
-```
+Firstly Download the two homosapiens chromosome files into the endo folder. The first of the chromosomes will be simulated as ancient humans. The second will be simulated as modern human contamination.
+(you can use 1 and 2 chromosomes
+https://www.ncbi.nlm.nih.gov/nuccore/NC_000002.12
+https://www.ncbi.nlm.nih.gov/nuccore/NC_000001.11?report=gbwithparts&log$=seqview)
 
 Next, let's download the environmental bacterial contamination in the `cont.list file` in addition to the human contamination in the contamination folder. Let's download bacteria from the oral flora in the `bacteria.list` file to be simulated as ancient in the `Bact` folder.
 
