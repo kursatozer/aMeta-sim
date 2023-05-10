@@ -133,7 +133,7 @@ s: prob. of deamination of Cs in single-stranded parts
 After completing all the necessary preparations, specify the options and parameters suitable for your work after the `gargammel` command and run it.
 
 ```
-gargammel -c 20 --comp 0.45,0.45,0.1 -f src/sizefreq.size.gz  -rl 125 --loc 3.7424069808 --scale 0.2795148843 -damage  0.03,0.4,0.01,0.3 -o data/simulation data
+gargammel -n 1000000 --comp 0.45,0.45,0.1-f src/sizefreq.size.gz -damage  0.03,0.4,0.01,0.3 -o data/simulation data
 ```
 ## Analysis
 
@@ -150,7 +150,7 @@ conda install -c "bioconda/label/cf201901" kraken2
 ### Start Analysis of Ancient Metagenomic Simulation
 
 ```
-sh sim_analysis.sh 
+sh sim_analysis.sh
 ```
 
 ### Assembly With Megahit
