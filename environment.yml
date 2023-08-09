@@ -1,14 +1,20 @@
-name: gargammel-org
+name: aMetasim
 channels:
-        - defaults
-        - bioconda
-        - conda-forge
+  - defaults
+  - bioconda
+  - conda-forge
 dependencies:
-        - python=2.7
-        - gargammel
-        - ms
-        - seq-gen
-        - numpy
-        - scipy
-        - biopython
-        - msprime
+  - python=2.7
+  - gargammel
+  - ms
+  - seq-gen
+  - numpy
+  - scipy
+  - biopython
+  - msprime
+  - r-base
+  - fastqc
+  - cutadapt
+  - flash
+  - megahit
+  - kraken2
