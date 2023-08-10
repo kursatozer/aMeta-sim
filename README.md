@@ -128,14 +128,6 @@ gargammel -n 1000000 --comp 0.45,0.45,0.1 -f src/sizefreq.size.gz -damage 0.03,0
 ```
 ## Analysis
 
-### Requirements for Analysis
-Install necessary tools for analysis
-
-```
-
-conda install -c "bioconda/label/cf201901" cutadapt
-
-```
 ### Start Analysis of Ancient Metagenomic Simulation
 
 ```
