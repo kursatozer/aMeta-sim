@@ -67,6 +67,10 @@ https://www.ncbi.nlm.nih.gov/nuccore/NC_000001.11?report=gbwithparts&log$=seqvie
 Next, let's download the environmental bacterial contamination in the `cont.list file` in addition to the human contamination in the contamination folder. Let's download bacteria from the oral flora in the `bacteria.list` file to be simulated as ancient in the `Bact` folder.
 
 ```
+cd data/
+python ../ms2chromosomes.py  -s 0.2 -f . -n 1000 
+rm -rfv simul_* seedms #cleanup
+
 sh download_bact.sh
 sh download_cont.sh
 ```
