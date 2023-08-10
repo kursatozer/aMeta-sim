@@ -13,19 +13,6 @@ conda create --name aMeta-sim
 conda activate aMeta-sim
 ```
 
-### Requirements:
-install necessary tools for simulation analysis
-
-```
-conda install -c bioconda gargammel
-conda install -c "conda-forge/label/gcc7" r-base
-
-```
-If you plan on using ms2chromosomes.py to simulate chromosomes based on ms, you also need:
-
-Hudson's ms (see: http://home.uchicago.edu/rhudson1/source/mksamples.html)
-seq-gen, you can install on Ubuntu by typing: `conda install -c "bioconda/label/cf201901" seq-gen`
-
 ### Overview
 The main driver script, gargammel.pl calls the following programs in order to simulate the in vivo process by which ancient DNA fragments are retrieved:
 
