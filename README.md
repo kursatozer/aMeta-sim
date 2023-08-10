@@ -70,7 +70,7 @@ Next, let's download the environmental bacterial contamination in the `cont.list
 cd data/
 python ../ms2chromosomes.py  -s 0.2 -f . -n 1000 
 rm -rfv simul_* seedms #cleanup
-
+cd ../
 sh download_bact.sh
 sh download_cont.sh
 ```
