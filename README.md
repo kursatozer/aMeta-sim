@@ -7,6 +7,7 @@ In this study, it is aimed to make analyzes using ancient metagenome simulations
 Create the necessary environment to use the Gargamel tool smoothly
 
 ```
+conda install -c anaconda python
 conda create --name aMeta-sim
 conda activate aMeta-sim
 ```
