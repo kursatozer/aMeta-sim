@@ -49,9 +49,7 @@ cd ..
 ```
 ### Downloading Data
 
-First, download two homosapiens chromosome files of the same chromosome to the endo folder. Or add the chromosome file you downloaded to the endo folder again with a different name. The first of the chromosomes will be simulated as ancient people. Second, it will be simulated as modern human pollution.
-(you can use 1 chromosomes
-https://www.ncbi.nlm.nih.gov/nuccore/NC_000001.11?report=gbwithparts&log$=seqview)
+To begin, download two Homo sapiens chromosome files of the same type and place them in the 'endo' folder. Alternatively, you can add the previously downloaded chromosome file to the 'endo' folder again, giving it a different name. The first of these chromosomes will be simulated to represent ancient humans, while the second will be simulated to represent modern human populations. (You can use a single chromosome file from this link: https://www.ncbi.nlm.nih.gov/nuccore/NC_000001.11?report=gbwithparts&log$=seqview) Alternatively, you can simulate both ancient and modern chromosomes using the tool provided in the code.
 
 Next, let's download the environmental bacterial contamination in the `cont.list file` in addition to the human contamination in the contamination folder. Let's download bacteria from the oral flora in the `bacteria.list` file to be simulated as ancient in the `Bact` folder.
 
