@@ -4,7 +4,7 @@ In this study, it is aimed to make analyzes using ancient metagenome simulations
 ## Gargammel
 
 ### Preparing the Environment
-Create the necessary environment to use the Gargamel tool smoothly
+Set up the necessary environment for smooth usage of the Gargammel tool:
 
 ```
 conda install -c bioconda cutadapt
