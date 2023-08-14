@@ -136,7 +136,7 @@ sh sim_analysis.sh
 ```
 
 ### Assembly With Megahit
-Assembly With Megahit: Following the preprocessing steps, the merged and compressed data generated earlier is subjected to genome assembly using the 'megahit' tool. This assembly process is executed with multiple k-mer lengths (21 to 101) using the -k-list parameter to improve the coverage of assembly across different read lengths. The tool utilizes four threads (-t 4) to parallelize the assembly process. The resulting assembled contigs are saved in the 'results/sim.assembly' directory, contributing to the comprehensive analysis of the metagenomic simulation data.
+Assembly With Megahit: Following the preprocessing steps, the merged and compressed data generated earlier is subjected to genome assembly using the `megahit` tool. This assembly process is executed with multiple k-mer lengths (21 to 101) using the -k-list parameter to improve the coverage of assembly across different read lengths. The tool utilizes four threads (-t 4) to parallelize the assembly process. The resulting assembled contigs are saved in the 'results/sim.assembly' directory, contributing to the comprehensive analysis of the metagenomic simulation data.
 ```
 megahit -f -r results/merged-fastq/simulation.merged.fastq.gz -t 4 --k-list 21,31,41,51,61,71,81,91,101 -o results/sim.assembly
 ```
