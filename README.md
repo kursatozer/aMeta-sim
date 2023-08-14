@@ -129,6 +129,7 @@ gargammel -n 1000000 --comp 0.45,0.45,0.1 -f src/sizefreq.size.gz -damage 0.03,0
 ## Analysis
 
 ### Start Analysis of Ancient Metagenomic Simulation
+"sim_analysis.sh" involves a series of steps for processing metagenomic simulation data. Firstly, the quality of data is assessed using `fastqc` to ensure its integrity. Subsequently, data is processed and trimmed using `cutadapt`. The quality of processed data is re-evaluated using `fastqc`. The `flash` tool is utilized to merge long reads, and ultimately, the merged data is compressed. These steps encompass the simulation analysis, encompassing data quality assurance, processing, and merging.
 
 ```
 sh sim_analysis.sh
