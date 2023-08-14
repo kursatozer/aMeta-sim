@@ -142,7 +142,7 @@ megahit -f -r results/merged-fastq/simulation.merged.fastq.gz -t 4 --k-list 21,3
 ```
 
 ### Taxonomic Classification
-Use the kraken2 tool for taxonomic classification. Kraken is a taxonomic sequence classifier that assigns taxonomic tags to DNA sequences.
+The download_database.sh script encompasses the steps necessary for acquiring and preparing the database required for the usage of the Kraken2 taxonomic classification tool. These steps involve downloading, extracting, and placing the required database into the specified directory. Subsequently, the kraken2 command performs the taxonomic classification by utilizing both the merged contigs and the downloaded database. This process aids in determining the organisms to which the contigs belong. The classification outcomes are saved in the k2_report.txt report file, while the outputs containing taxonomic labels are written into the kraken_output.txt file. These steps collectively conclude the taxonomic analysis of metagenomic simulation data."
 
 ```
 sh download_database.sh 
