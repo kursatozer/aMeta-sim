@@ -9,8 +9,7 @@ Set up the necessary environment for smooth usage of the Gargammel tool:
 ```
 conda install -c bioconda cutadapt
 conda install -c anaconda python
-conda create --name aMeta-sim
-conda activate aMeta-sim
+conda env create -f environment.yml
 ```
 
 ### Overview
